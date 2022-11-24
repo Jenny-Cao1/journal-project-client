@@ -22,11 +22,11 @@ const Post = ({ post, setCurrentId }) => {
             </div>
             <div className={classes.overlay2}>
                 <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
-                    <MoreHorizon fontSize="default" />
+                    <MoreHorizon fontSize="medium" />
                 </Button>
             </div>
             <div className={classes.details}>
-                <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag}` )}</Typography>
+                <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => ` #${tag}` )}</Typography>
             </div>
             <Typography className={classes.title} variant="h5" gutterBottom>{post.title}</Typography>
             <CardContent>
@@ -34,7 +34,7 @@ const Post = ({ post, setCurrentId }) => {
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}>
-                    <ThumbAltIcon fontSize="small" />Like {post.likeCount}
+                    <ThumbAltIcon fontSize="small" />{post.likeCount}&nbsp;Like{post.likeCount >= 2  && `S`} &nbsp;
                 </Button>
                 <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}>
                     <DeleteIcon fontSize="small" />Delete
