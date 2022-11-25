@@ -10,7 +10,7 @@ const Posts = ({ setCurrentId }) => {
     const classes = useStyles();
 
     return(
-        !posts.length ? <Typography className={classes.title} variant="h3">Create a Post!</Typography> : (
+        !posts.length ? <CircularProgress /> : (
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 {posts.map((post) => (
                     <Grid key={post._id} item xs={12} sm={6}>
