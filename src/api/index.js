@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://journals-project.herokuapp.com/posts';
+const url = 'https://journals-project.onrender.com/posts';
 
 export const fetchPosts = () => axios.get(url);
 
